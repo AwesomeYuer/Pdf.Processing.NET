@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <!--<ItemGroup>
+    <ProjectReference Include="..\src\UglyToad.PdfPig.DocumentLayoutAnalysis\UglyToad.PdfPig.DocumentLayoutAnalysis.csproj" />
+    <ProjectReference Include="..\src\UglyToad.PdfPig\UglyToad.PdfPig.csproj" />
+  </ItemGroup>-->
+    <ItemGroup>
+	    <PackageReference Include="PdfPig" Version="0.1.8" />
+    </ItemGroup>
+</Project>
