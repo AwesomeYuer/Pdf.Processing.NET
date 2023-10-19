@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.PdfPig-Examples", "00.PdfPig-Examples", "{E101C397-8508-41F9-AA69-383D5BC47F79}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10.PdfPig-Tests-Examples", "10.PdfPig-Tests-Examples", "{E101C397-8508-41F9-AA69-383D5BC47F79}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10.Tabula-Sharp-Tests", "10.Tabula-Sharp-Tests", "{6E122796-A85B-4816-978B-15273EFAD566}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20.Tabula-Sharp-Tests", "20.Tabula-Sharp-Tests", "{6E122796-A85B-4816-978B-15273EFAD566}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UglyToad.Examples", "PdfPig-Examples\UglyToad.Examples.csproj", "{A4B103FE-DA3C-4B61-8E47-D62DC0877CCA}"
 EndProject
@@ -22,6 +22,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camelot", "Camelot\Camelot\Camelot.csproj", "{F367E7C6-E277-4A9E-831C-FC92A98694BE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camelot.ImageProcessing.OpenCvSharp4", "Camelot\Camelot.ImageProcessing.OpenCvSharp4\Camelot.ImageProcessing.OpenCvSharp4.csproj", "{4BC11B0F-43CF-4FD6-8881-539653307490}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Solution Items", "00.Solution Items", "{5DCB599B-9B68-47C2-8647-E040888536E0}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UglyToad.PdfPig.Tests", "PdfPig-Tests\UglyToad.PdfPig.Tests.csproj", "{D9571A59-BA3B-4AC1-B03C-E56270FC20B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +63,10 @@ Global
 		{4BC11B0F-43CF-4FD6-8881-539653307490}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BC11B0F-43CF-4FD6-8881-539653307490}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BC11B0F-43CF-4FD6-8881-539653307490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9571A59-BA3B-4AC1-B03C-E56270FC20B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9571A59-BA3B-4AC1-B03C-E56270FC20B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9571A59-BA3B-4AC1-B03C-E56270FC20B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9571A59-BA3B-4AC1-B03C-E56270FC20B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +78,7 @@ Global
 		{CD6DEB2B-33F0-4A71-AABF-96A4DA97B73E} = {B568FA4F-31AA-45B5-84E2-95D4D55DD414}
 		{F367E7C6-E277-4A9E-831C-FC92A98694BE} = {68011D6D-3A53-4DED-8037-3E9C2B7B714E}
 		{4BC11B0F-43CF-4FD6-8881-539653307490} = {68011D6D-3A53-4DED-8037-3E9C2B7B714E}
+		{D9571A59-BA3B-4AC1-B03C-E56270FC20B9} = {E101C397-8508-41F9-AA69-383D5BC47F79}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {03F738BD-74E0-4DE7-8063-0ACE16E931F1}
