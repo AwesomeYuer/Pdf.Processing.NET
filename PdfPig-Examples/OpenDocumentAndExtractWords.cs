@@ -2,6 +2,7 @@
 
 using System;
 using System.Text;
+using Microshaoft;
 using PdfPig;
 using PdfPig.Content;
 
@@ -44,11 +45,18 @@ public static class OpenDocumentAndExtractWords
 
                     sb.Append(word.Text);
 
+                    //if (word.Text == "\n")
+                    {
+                        Console.Write(word.Text);
+
+                    }
+                    
+
                     previous = word;
                 }
             }
         }
-
-        Console.WriteLine(sb.ToString());
+        Console.Out.WriteHightLightLine(sb.ToString());
+        //Console.WriteLine(sb.ToString());
     }
 }

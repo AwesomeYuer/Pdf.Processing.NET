@@ -3,6 +3,7 @@
 using System;
 using PdfPig;
 using PdfPig.DocumentLayoutAnalysis.TextExtractor;
+using Microshaoft;
 
 internal static class ExtractTextWithNewlines
 {
@@ -12,9 +13,16 @@ internal static class ExtractTextWithNewlines
         {
             foreach (var page in document.GetPages())
             {
-                var text = ContentOrderTextExtractor.GetText(page, true);
+                var text = ContentOrderTextExtractor.GetText(page);
 
-                Console.WriteLine(text);
+                Console.Out.WriteHightLight
+                            (
+                                () =>
+                                {
+                                    Console.WriteLine($"==={page.Number}===");
+                                    Console.WriteLine(text);
+                                }
+                            );
             }
         }
     }

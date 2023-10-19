@@ -13,16 +13,40 @@ public static class Program
 
         var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
         var filesDirectory = Path.Combine(baseDirectory, "..", "..", "..", "..", "src", "UglyToad.PdfPig.Tests", "Integration", "Documents");
+        filesDirectory = Path.Combine(baseDirectory, "..", "..", "..", "Documents");
 
         var examples = new Dictionary<int, (string name, Action action)>
         {
             {1,
                 ("Extract Words with newline detection (example with algorithm)",
-                () => OpenDocumentAndExtractWords.Run(Path.Combine(filesDirectory, "Two Page Text Only - from libre office.pdf")))
+                () => OpenDocumentAndExtractWords
+                            .Run
+                                (
+                                    Path.Combine
+                                            (
+                                                filesDirectory
+                                                //, "Two Page Text Only - from libre office.pdf"
+                                                //, "byz.pdf"
+                                                , "00. 冰箱.pdf"
+                                            )
+                                )
+                )
+
             },
             {2,
-                ("Extract Text with newlines (using built-in content extractor)",
-                () => ExtractTextWithNewlines.Run(Path.Combine(filesDirectory, "Two Page Text Only - from libre office.pdf")))
+                (
+                    "Extract Text with newlines (using built-in content extractor)"
+                    , () => ExtractTextWithNewlines.Run
+                                    (
+                                        Path.Combine
+                                                (
+                                                    filesDirectory
+                                                    //, "Two Page Text Only - from libre office.pdf"
+                                                    //, "byz.pdf"
+                                                    , "00. 冰箱.pdf"
+                                                )
+                                    )
+                )
             },
             {3,
                 ("Extract images",
