@@ -1,4 +1,6 @@
-﻿namespace UglyToad.Examples;
+﻿#define YET_TO_BE_DONE
+
+namespace UglyToad.Examples;
 
 using PdfPig;
 using System;
@@ -20,6 +22,9 @@ public static class AdvancedTextExtraction
             {
                 // 0. Preprocessing
                 var letters = page.Letters; // no preprocessing
+
+                
+
 
                 // 1. Extract words
                 var wordExtractor = NearestNeighbourWordExtractor.Instance;
@@ -59,8 +64,12 @@ public static class AdvancedTextExtraction
                         return true;
                     }
                 };
-
-                var words = wordExtractor.GetWords(letters, wordExtractorOptions);
+                //letters[0].fo
+                var words = wordExtractor.GetWords
+                                            (
+                                                letters
+                                                //, wordExtractorOptions
+                                            );
 
                 // 2. Segment page
                 var pageSegmenter = DocstrumBoundingBoxes.Instance;
@@ -69,15 +78,24 @@ public static class AdvancedTextExtraction
 
                 };
 
-                var textBlocks = pageSegmenter.GetBlocks(words, pageSegmenterOptions);
+                var textBlocks = pageSegmenter.GetBlocks
+                                                    (
+                                                        words
+                                                        //, pageSegmenterOptions
+                                                    );
 
                 // 3. Postprocessing
                 var readingOrder = UnsupervisedReadingOrderDetector.Instance;
                 var orderedTextBlocks = readingOrder.Get(textBlocks);
 
+
+
                 // 4. Extract text
                 foreach (var block in orderedTextBlocks)
                 {
+
+                    
+
                     sb.Append(block.Text.Normalize(NormalizationForm.FormKC)); // normalise text
                     sb.AppendLine();
                 }
@@ -85,7 +103,7 @@ public static class AdvancedTextExtraction
                 sb.AppendLine();
             }
         }
-
+        
         Console.WriteLine(sb.ToString());
 #endif
     }

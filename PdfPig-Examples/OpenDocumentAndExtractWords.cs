@@ -5,10 +5,39 @@ using System.Text;
 using Microshaoft;
 using PdfPig;
 using PdfPig.Content;
+using UglyToad.PdfPig.DocumentLayoutAnalysis.PageSegmenter;
 
 public static class OpenDocumentAndExtractWords
 {
     public static void Run(string filePath)
+    {
+        filePath = @"D:\MyGitHub\PyMuPDF-Utilities\00.MCD\pdfs\智能取餐柜营运操作手册.pdf";
+        var sb = new StringBuilder();
+
+        using (var document = PdfDocument.Open(filePath))
+        {
+            foreach (var page in document.GetPages())
+            {
+                Console.WriteLine($"<<<<<<<<<<<<<<Page {page.Number}");
+                var words = page.GetWords();
+                var blocks = RecursiveXYCut.Instance.GetBlocks(words);
+                var i = 0;
+                foreach (var block in blocks)
+                {
+                    i++;
+                    Console.WriteLine($"block: {i}");
+                    Console.WriteLine(block.Text);
+                    Console.WriteLine("==============================");
+                }
+                Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>");
+            }
+        }
+        Console.Out.WriteHightLightLine(sb.ToString());
+        //Console.WriteLine(sb.ToString());
+    }
+
+
+    public static void Run2(string filePath)
     {
         var sb = new StringBuilder();
 
@@ -50,7 +79,7 @@ public static class OpenDocumentAndExtractWords
                         Console.Write(word.Text);
 
                     }
-                    
+
 
                     previous = word;
                 }

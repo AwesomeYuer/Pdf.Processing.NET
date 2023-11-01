@@ -11,8 +11,15 @@ internal static class ExtractTextWithNewlines
     {
         using (var document = PdfDocument.Open(filePath))
         {
+            //foreach (var page in document)
+            //{ 
+            
+            //}
+
             foreach (var page in document.GetPages())
             {
+                
+
                 var text = ContentOrderTextExtractor.GetText(page);
 
                 Console.Out.WriteHightLight
