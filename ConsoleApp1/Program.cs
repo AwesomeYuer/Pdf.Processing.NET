@@ -8,6 +8,7 @@ using UglyToad.PdfPig.DocumentLayoutAnalysis.PageSegmenter;
 
 Console.WriteLine("Hello, World!");
 var filePath = @"D:\MyGitHub\PyMuPDF-Utilities\00.MCD\pdfs\智能取餐柜营运操作手册.pdf";
+filePath = @"D:\MyGitHub\PyMuPDF-Utilities\pdfs\Simple.Rowspan.for.Pdf.Print.pdf";
 
 using (var pdfDocument = PdfDocument.Open(filePath, new ParsingOptions() { ClipPaths = true }))
 {
@@ -60,6 +61,8 @@ using (var pdfDocument = PdfDocument.Open(filePath, new ParsingOptions() { ClipP
                 //Console.WriteLine(table[0,0].GetText());
                 //Console.WriteLine(table.BoundingBox);
                 //Console.WriteLine("==============================");
+
+                
 
                 foreach (var row in table.Rows)
                 {
