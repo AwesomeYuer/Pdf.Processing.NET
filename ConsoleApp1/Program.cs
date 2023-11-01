@@ -3,6 +3,7 @@ using Tabula;
 using Tabula.Detectors;
 using Tabula.Extractors;
 using UglyToad.PdfPig;
+using UglyToad.PdfPig.Content;
 using UglyToad.PdfPig.DocumentLayoutAnalysis.PageSegmenter;
 
 Console.WriteLine("Hello, World!");
@@ -71,6 +72,17 @@ using (var pdfDocument = PdfDocument.Open(filePath, new ParsingOptions() { ClipP
                 }
             }
             //Console.ReadLine();
+        }
+        var pdfImages = page.GetImages();
+        i = 0;
+        foreach (var pdfImage in pdfImages)
+        {
+            i ++;
+            if (!pdfImage.TryGetBytes(out var bytes))
+            {
+                bytes = pdfImage.RawBytes;
+            }
+            Console.WriteLine($"Images:{bytes.Count} {i}/{page.Number}");
         }
     }
 }
